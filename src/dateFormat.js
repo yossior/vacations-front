@@ -1,0 +1,1 @@
+export default date => new Intl.DateTimeFormat('he-IL',{month: 'numeric', day: 'numeric'}).format(new Date(date));

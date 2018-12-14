@@ -1,0 +1,12 @@
+.link-container {
+    padding: 8px;
+    display: inline-block;
+}
+
+.link,
+link:hover,
+link:active,
+link:visited,
+link:focus {
+    text-decoration: none !important;
+}
