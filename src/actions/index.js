@@ -7,6 +7,5 @@ export const getVacations = () => {
 }
 
 export const updateVacations = (vacs) => {
-  debugger
   return {type:"VACS-UPDATE", payload:{vacations:vacs}};
 }

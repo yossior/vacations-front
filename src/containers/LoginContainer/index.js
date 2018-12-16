@@ -13,7 +13,6 @@ class LoginContainer extends Component {
   }
 
   login() {
-    debugger
     fetch("http://localhost:3000/login", {
       method: "POST",
       headers: {
@@ -29,7 +28,6 @@ class LoginContainer extends Component {
         console.log(data);
       })
       .catch(err => {
-        debugger;
       });
   }
   handleChange(e) {

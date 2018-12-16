@@ -7,7 +7,6 @@ const initialState = {
 }
 
 const vacationsReducer = (state = initialState, action) => {
-    debugger
     switch (action.type) {
         case 'VACS-UPDATE':
             return {
