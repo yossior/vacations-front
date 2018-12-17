@@ -1,1 +1,1 @@
-export default date => new Intl.DateTimeFormat('he-IL',{month: 'numeric', day: 'numeric'}).format(new Date(date));
+export default date => new Date(date).toISOString().slice(0, 10);
