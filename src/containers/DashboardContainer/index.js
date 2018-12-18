@@ -15,4 +15,5 @@ class DashboardContainer extends Component {
 const mapStateToProps = state => {
   return { vacations: state.vacationsReducer.vacations }
 }
+
 export default connect(mapStateToProps)(DashboardContainer);

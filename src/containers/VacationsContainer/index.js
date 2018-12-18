@@ -24,6 +24,7 @@ class VacationsContainer extends Component {
     )
   }
 }
+
 const mapStateToProps = state => {
   return { vacations: state.vacationsReducer.vacations }
 }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Login from "../../components/Login";
+import history from '../../history';
 class LoginContainer extends Component {
   render() {
     return (
@@ -22,6 +23,7 @@ class LoginContainer extends Component {
       credentials: 'include'
     })
       .then(response => {
+        history.push('/vacations');
         return response.json();
       })
       .then(data => {

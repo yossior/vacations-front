@@ -45,6 +45,7 @@ export default class Dashboard extends Component {
 
     switch (this.state.action) {
       case "edit":
+      debugger
         fetch(`http://localhost:3000/admin/${this.state.edited.id}`, {
           method: 'PUT',
           body: JSON.stringify(this.state),
@@ -55,7 +56,6 @@ export default class Dashboard extends Component {
         break;
 
       case "add":
-      debugger;
       fetch(`http://localhost:3000/admin/`, {
         method: 'POST',
         body: JSON.stringify(this.state),
@@ -96,15 +96,15 @@ export default class Dashboard extends Component {
                 </Col>
               </FormGroup>
               <FormGroup row>
-                <Label for="price" sm={2}>Price</Label>
-                <Col sm={10}>
-                  <Input type="number" name="price" id="price" onChange={this.handleChange} value={this.state.edited.price} />
-                </Col>
-              </FormGroup>
-              <FormGroup row>
                 <Label for="endDate" sm={2}>End Date</Label>
                 <Col sm={10}>
                   <Input type="date" name="endDate" id="endDate" onChange={this.handleChange} value={this.state.edited.endDate} />
+                </Col>
+              </FormGroup>
+              <FormGroup row>
+                <Label for="price" sm={2}>Price</Label>
+                <Col sm={10}>
+                  <Input type="number" name="price" id="price" onChange={this.handleChange} value={this.state.edited.price} />
                 </Col>
               </FormGroup>
               <FormGroup row>

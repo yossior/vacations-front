@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import { Router, Route, Switch } from "react-router-dom";
-import createBrowserHistory from "history/createBrowserHistory";
 import LoginContainer from "../LoginContainer";
 import Header from "../../components/Header";
 import VacationsContainer from "../VacationsContainer";
 import RegisterContainer from "../RegisterContainer";
 import DashboardContainer from "../DashboardContainer";
-const history = createBrowserHistory();
+import history from '../../history';
 
 export default class HeaderContainer extends Component {
   render() {
