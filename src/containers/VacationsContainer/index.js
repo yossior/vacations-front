@@ -13,7 +13,7 @@ class VacationsContainer extends Component {
 
   componentDidMount() {
     this.props._getVacations();
-    socket.on('VACS_UPDATE', data => {debugger; this.props._updateVacs(data)});
+    // socket.on('VACS_UPDATE', data => {debugger; this.props._updateVacs(data)});
   }
 
   render() {

@@ -13,6 +13,7 @@ class MainContainer extends Component {
   }
 
   componentDidMount() {
+    if(document.cookie.indexOf('token') !== -1)
     this.props._getVacations();
   }
 

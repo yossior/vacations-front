@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import Login from "../../components/Login";
 import history from '../../history';
 class LoginContainer extends Component {
+  constructor(props){
+    super(props);
+    if(document.cookie.indexOf('token') !== -1)
+      history.push('vacations');
+  }
   render() {
     return (
       <div>

@@ -1,6 +1,8 @@
 export const getVacations = () => {
   return async dispatch => {
-    const request = await fetch("http://localhost:3000/vacations");
+    const request = await fetch("http://localhost:3000/vacations/following",{
+      credentials:'include'
+    });
     const data = await request.json();
     return dispatch({ type: "VACS-UPDATE", payload: { vacations: data } });
   };

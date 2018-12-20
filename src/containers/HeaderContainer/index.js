@@ -15,7 +15,7 @@ export default class HeaderContainer extends Component {
           <div>
             <Header />
             <Switch>
-              <Route exact path="/" component={VacationsContainer} />
+              <Route exact path="/" component={LoginContainer} />
               <Route path="/login" component={LoginContainer} />
               <Route path="/register" component={RegisterContainer} />
               <Route path="/vacations" component={VacationsContainer} />
