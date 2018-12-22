@@ -7,8 +7,8 @@ class Vacations extends Component {
     return (
       <div>
         <Row>
-          {this.props.vacations.map(v => (
-            <VacationContainer vac={v} />
+          {this.props.vacations.map((v, key) => (
+            <VacationContainer vac={v} vacKey = {key}/>
           ))}
         </Row>
       </div>
