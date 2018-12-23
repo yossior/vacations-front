@@ -27,7 +27,7 @@ class Register extends Component {
                   <Input type="text" placeholder="Last Name" name="lastName" onChange={this.handleChange} />
                 </FormGroup>
                 <FormGroup row>
-                  <Input type="text" placeholder="Username" name="username" onChange={this.handleChange} />
+                  <Input type="text" placeholder="Username" name="username" onChange={this.handleChange}/>
                 </FormGroup>
                 <FormGroup row>
                   <Input type="text" placeholder="Password" name="password" onChange={this.handleChange} />
@@ -35,9 +35,7 @@ class Register extends Component {
                 <FormGroup row>
                   <Button color="primary" onClick={this.props.register.bind(null, this.state)}>Register</Button>
                 </FormGroup>
-
               </Form>
-
             </Jumbotron>
           </Col>
         </Row>

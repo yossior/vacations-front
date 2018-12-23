@@ -14,7 +14,7 @@ export default class Vacation extends Component {
               <CardTitle>{this.props.vac.location}</CardTitle>
               <CardSubtitle>{dateFormat(this.props.vac.startDate)} - {dateFormat(this.props.vac.endDate)}</CardSubtitle>
               <CardText>{this.props.vac.description}</CardText>
-              <Button block onMouseOver={this.props.hover} onMouseOut={this.props.hoverOut} >{this.props.vac.follows === 1 ? 'Following' : 'Follow'}</Button>
+              <Button block onClick={this.props.following} onMouseOver={this.props.hover} onMouseOut={this.props.hoverOut} >{this.props.vac.follows === 1 ? 'Following' : 'Follow'}</Button>
             </CardBody>
           </Card>
         </div>

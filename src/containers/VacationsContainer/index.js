@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import Vacations from '../../components/Vacations';
 import { getVacations, updateVacations } from '../../actions';
 import { connect } from 'react-redux';
-import openSocket from 'socket.io-client';
-const socket = openSocket('http://localhost:3008');
 
 class VacationsContainer extends Component {
   constructor(props) {
