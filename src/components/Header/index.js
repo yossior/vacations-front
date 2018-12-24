@@ -6,8 +6,20 @@ import {
     Nav,
     NavItem
 } from 'reactstrap';
+import history from '../../history';
 
 class Header extends Component {
+
+    log(e){
+        e.preventDefault();
+        if (document.cookie.indexOf('token') === -1) {
+            history.push('login');
+        } else {
+            document.cookie = 'token' +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+            history.push('login');
+        }
+    }
+
     render() {
         return (
             <div>
@@ -15,7 +27,7 @@ class Header extends Component {
                     {/* <NavbarBrand href="/">reactstrap</NavbarBrand> */}
                     <Nav>
                         <NavItem className="link-container">
-                            <Link className="link" to="/login" >Login</Link>
+                            <Link className="" to="/login" onClick={this.log}>{document.cookie.indexOf('token') === -1 ? "Login" : "Logout"}</Link>
                         </NavItem>
                         <NavItem className="link-container">
                             <Link className="link" to="/vacations" >Vacations</Link>

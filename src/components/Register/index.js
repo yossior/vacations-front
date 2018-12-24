@@ -2,15 +2,7 @@ import React, { Component } from "react";
 import { Jumbotron, Button, Input, Row, Col, Form, FormGroup } from "reactstrap";
 
 class Register extends Component {
-
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(e) {
-    this.setState({ ...this.state, [e.target.name]: e.target.value })
-  }
+  
   render() {
     return (
       <div>
@@ -19,21 +11,21 @@ class Register extends Component {
             <Jumbotron className="display-6">
               <h3 className="display-6">Sign up</h3>
               <hr className="my-2" />
-              <Form >
+              <Form onSubmit={this.props.register}>
                 <FormGroup row>
-                  <Input type="text" placeholder="First Name" name="firstName" onChange={this.handleChange} />
+                  <Input required type="text" placeholder="First Name" name="firstName" onChange={this.props.handleChange} />
                 </FormGroup>
                 <FormGroup row>
-                  <Input type="text" placeholder="Last Name" name="lastName" onChange={this.handleChange} />
+                  <Input required type="text" placeholder="Last Name" name="lastName" onChange={this.props.handleChange} />
                 </FormGroup>
                 <FormGroup row>
-                  <Input type="text" placeholder="Username" name="username" onChange={this.handleChange}/>
+                  <Input required type="text" placeholder="Username" name="username" onChange={this.props.handleChange}/>
                 </FormGroup>
                 <FormGroup row>
-                  <Input type="text" placeholder="Password" name="password" onChange={this.handleChange} />
+                  <Input required type="text" placeholder="Password" name="password" onChange={this.props.handleChange} />
                 </FormGroup>
                 <FormGroup row>
-                  <Button color="primary" onClick={this.props.register.bind(null, this.state)}>Register</Button>
+                  <Button color="primary" type="submit">Register</Button>
                 </FormGroup>
               </Form>
             </Jumbotron>

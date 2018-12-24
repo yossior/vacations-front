@@ -6,6 +6,7 @@ import VacationsContainer from "../VacationsContainer";
 import RegisterContainer from "../RegisterContainer";
 import DashboardContainer from "../DashboardContainer";
 import history from '../../history';
+import StatisticsContainer from "../StaticticsContainer";
 
 export default class HeaderContainer extends Component {
   render() {
@@ -20,6 +21,7 @@ export default class HeaderContainer extends Component {
               <Route path="/register" component={RegisterContainer} />
               <Route path="/vacations" component={VacationsContainer} />
               <Route path="/dashboard" component={DashboardContainer} />
+              <Route path="/statistics" component={StatisticsContainer} />
             </Switch>
           </div>
         </Router>

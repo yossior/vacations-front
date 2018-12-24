@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Jumbotron, Button, Input, Row, Col, Form, FormGroup } from "reactstrap";
+import { Jumbotron, Button, Input, Row, Col, Form, FormGroup, FormFeedback } from "reactstrap";
 import { Link } from 'react-router-dom';
 
 class Login extends Component {
@@ -11,15 +11,15 @@ class Login extends Component {
             <Jumbotron className="display-6">
               <h3 className="display-6">Login</h3>
               <hr className="my-2" />
-              <Form>
+              <Form onSubmit={this.props.login}>
                 <FormGroup>
-                  <Input type="text" placeholder="Username" onChange={this.props.handleChange} name="user" />
+                  <Input required type="text" placeholder="Username" onChange={this.props.handleChange} name="username" />
                 </FormGroup>
                 <FormGroup>
-                  <Input type="password" placeholder="Password" onChange={this.props.handleChange} name="password" />
+                  <Input required type="password" placeholder="Password" onChange={this.props.handleChange} name="password" />
                 </FormGroup>
                 <FormGroup>
-                  <Button color="primary" onClick={this.props.login}>Log-in</Button>
+                  <Button type="submit" color="primary" >Log-in</Button>
                 </FormGroup>
                 <p>Don't have an account? <Link className="link" to="register">Sign up</Link></p>
               </Form>

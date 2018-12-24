@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import Login from "../../components/Login";
 import history from '../../history';
 class LoginContainer extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    if(document.cookie.indexOf('token') !== -1)
+    if (document.cookie.indexOf('token') !== -1)
       history.push('vacations');
   }
   render() {
@@ -18,7 +18,8 @@ class LoginContainer extends Component {
     );
   }
 
-  login() {
+  login(e) {
+    e.preventDefault();
     fetch("http://localhost:3000/login", {
       method: "POST",
       headers: {
