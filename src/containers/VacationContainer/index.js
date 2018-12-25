@@ -9,7 +9,6 @@ class VacationContainer extends Component {
     e.target.textContent = this.props.vac.follows === 0 ?  'Follow' : 'Unfollow';
   }
   hoverOut(e){
-    
     e.target.textContent = this.props.vac.follows === 0 ? 'Follow' : 'Following';
   }
 

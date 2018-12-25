@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Jumbotron, Button, Input, Row, Col, Form, FormGroup, FormFeedback } from "reactstrap";
+import { Jumbotron, Button, Input, Row, Col, Form, FormGroup } from "reactstrap";
 import { Link } from 'react-router-dom';
 
 class Login extends Component {

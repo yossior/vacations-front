@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import dateFormat from '../../dateFormat'
+import dateFormat from '../../dateFormat';
+import { Link } from 'react-router-dom';
 import { Table, Button, Modal, ModalHeader, ModalBody, ModalFooter, Col, Form, FormGroup, Label, Input } from "reactstrap";
 
 import { Edit, DeleteRounded } from '@material-ui/icons';
@@ -51,7 +52,8 @@ export default class Dashboard extends Component {
           body: JSON.stringify(this.state),
           headers: {
             "Content-Type": "application/json; charset=utf-8"
-          }
+          },
+          credentials:'include'
         })
         break;
 
@@ -61,7 +63,8 @@ export default class Dashboard extends Component {
         body: JSON.stringify(this.state),
         headers: {
           "Content-Type": "application/json; charset=utf-8"
-        }
+        },
+        credentials:'include'
       })
     }
     this.toggle();
@@ -73,7 +76,8 @@ export default class Dashboard extends Component {
       method: 'DELETE',
       headers: {
         "Content-Type": "application/json; charset=utf-8"
-      }
+      },
+      credentials:'include'
     })
   }
 
@@ -158,6 +162,7 @@ export default class Dashboard extends Component {
           </tbody>
         </Table>
         <Button name="addVac" onClick={this.addVac.bind(this)}>Add Vacation</Button>
+        <Link to="statistics">Statistics</Link>
       </div>
     )
   }

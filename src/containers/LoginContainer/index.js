@@ -4,8 +4,13 @@ import history from '../../history';
 class LoginContainer extends Component {
   constructor(props) {
     super(props);
-    if (document.cookie.indexOf('token') !== -1)
-      history.push('vacations');
+    if (document.cookie.indexOf('token') !== -1) {
+      if (document.cookie.isAdmin)
+        history.push('dashboard');
+      else {
+        history.push('vacations');
+      }
+    }
   }
   render() {
     return (
@@ -28,12 +33,17 @@ class LoginContainer extends Component {
       body: JSON.stringify(this.state),
       credentials: 'include'
     })
-      .then(response => {
-        history.push('/vacations');
-        return response.json();
-      })
-      .then(data => {
-        console.log(data);
+      .then(response => {debugger; 
+        if(response.status === 403)
+        alert('Wrong username or password');
+        return response.json()})
+      .then(dataIsAdmin => {
+        debugger
+        if (dataIsAdmin)
+          history.push('dashboard');
+        else {
+          history.push('vacations');
+        }
       })
       .catch(err => {
       });
